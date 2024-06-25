@@ -12,7 +12,7 @@ app.get('/items', async (req, res, next) => {
     try {
         const query = req.query.q;
         const response = await axios.get(`https://api.mercadolibre.com/sites/MLA/search?q=${query}`);
-        const items = response.data.results.slice(0, 10).map((item) => ({
+        const items = response.data.results.slice(0, 4).map((item) => ({
             id: item.id,
             title: item.title,
             price: {
